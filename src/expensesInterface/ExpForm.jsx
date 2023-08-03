@@ -41,6 +41,7 @@ export default function ExpenseForm(props){
             <form>
                 <label>Category</label>
                 <select name="categories">
+                    <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}></option>
                     <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Eating Out</option>
                     <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Groceries</option>
                     <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Entertainment</option>
@@ -54,7 +55,7 @@ export default function ExpenseForm(props){
             </form>
         <button><NavLink to="/expenses">Back</NavLink></button>
         <br />
-        <button onClick={saveExpenseToGlobal} >Save expense</button>
+        <button onClick={saveExpenseToGlobal} >Save</button>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { useExpenseData } from "./ExpContext";
 import ExpenseForm from "./ExpForm";
 import ExpenseParent from "./ExpParent";
 import { NavLink } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
 
 export default function ExpensesPage(props){
     const globalExpensesData = useExpenseData();
@@ -23,6 +24,7 @@ export default function ExpensesPage(props){
                 })}
             <button><NavLink to="/addExpense">Add expense</NavLink></button>
             {/* <ExpenseForm /> */}
+            <Navbar />
         </div>
     )
 }

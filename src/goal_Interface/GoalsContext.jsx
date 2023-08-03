@@ -1,29 +1,29 @@
 import { useContext, useReducer, useEffect, createContext } from "react";
 import { useLocalStorage } from "react-use";
 
-const goalsData = [
-    // {
-    //     id: 1,
-    //     title: 'Tattoo',
-    //     targetAmount: 300,
-    //     initialAmount: 30
-    // },
-    // {
-    //     id: 2,
-    //     title: 'Travel',
-    //     targetAmount: 1000,
-    //     initialAmount: 100
-    // }
+const initialGoalsData = [
+    {
+        id: 1,
+        title: 'Tattoo',
+        targetAmount: 300,
+        initialAmount: 30
+    },
+    {
+        id: 2,
+        title: 'Travel',
+        targetAmount: 1000,
+        initialAmount: 100
+    }
 ]
 
-const goalsReducer = (goals, action) => {
-    let stateEditable = [...goals]
+const goalsReducer = (previousState, action) => {
+    let stateEditable = [...previousState]
+
     switch(action.type) {
         case 'setup' : {
 
             let localStorageData = action.addData;
             stateEditable = localStorageData;
-
             return stateEditable;
             // return [
             //     ...goals,
@@ -34,7 +34,6 @@ const goalsReducer = (goals, action) => {
         case 'create': {
             let newGoal = action.newGoal;
             stateEditable.push(newGoal);
-
             return stateEditable;
             // return [
             //     ...goals.push(action.newGoal)
@@ -47,17 +46,24 @@ const goalsReducer = (goals, action) => {
             })
 
             stateEditable[targetGoalIndex] = action.updateGoal;
+            return stateEditable;
             // return goals.map(goal => {
             //     if(goal.id == action.updateGoal.id)
             //         return action.updateGoal
             //     return goal;
             // })
         }
+
         case 'deleteGoal' : {
-            return stateEditable.filter(user => user.id !== action.id)
+            let indexToRemove = stateEditable.findIndex(globalSpecificGoal => {
+                return globalSpecificGoal.id === action.deleteGoal.id;
+            })
+
+            return stateEditable[indexToRemove] = action.deleteGoal
+            // return stateEditable.filter(user => user.id !== action.id)
         }
         default: {
-            return <p>Error</p>
+            return previousState;
         }
     }
 }
@@ -73,9 +79,9 @@ export function useGoalDispatch() {
 }
 
 export default function GoalsProvider(props){
-    const [goals, goalsDispatch] = useReducer(goalsReducer, goalsData);
+    const [goalsData, goalsDispatch] = useReducer(goalsReducer, initialGoalsData);
 
-    const [persistentData, setPersistentData] = useLocalStorage('goals', goalsData);
+    const [persistentData, setPersistentData] = useLocalStorage('goals', initialGoalsData);
 
     useEffect(() => {
         goalsDispatch({type:"setup", addData: persistentData});
@@ -86,11 +92,11 @@ export default function GoalsProvider(props){
     },[persistentData]);
 
     useEffect(() => {
-        setPersistentData(goals);
-    },[goals]);
+        setPersistentData(goalsData);
+    },[goalsData]);
 
     return(
-        <GoalDataContext.Provider value={goals}>
+        <GoalDataContext.Provider value={goalsData}>
             <GoalDispatchContext.Provider value={goalsDispatch}>
                 {props.children}
             </GoalDispatchContext.Provider>

@@ -32,7 +32,7 @@ export default function GoalForm(props) {
         let tempNewGoal = {
             id: id || globalGoalsData.length + 1,
             title: localTitle,
-            targetAmount: Number.isInteger(localTargetAmount),
+            targetAmount: Number(localTargetAmount),
             initialAmount: localInitialAmount
         }
 
@@ -40,6 +40,23 @@ export default function GoalForm(props) {
             globalGoalsDispatch({type:"updateGoal", updateGoal: tempNewGoal})
         } else {
             globalGoalsDispatch({type:"create", newGoal: tempNewGoal})
+        }
+    }
+
+    const deletGoal = () => {
+        let tempOldGoal = {
+            id: id || globalGoalsData.length + 1,
+            title: localTitle,
+            targetAmount: localTargetAmount,
+            initialAmount: localInitialAmount
+        }
+
+        if(id) {
+            globalGoalsDispatch({type:"deletGoal", deleteGoal: tempOldGoal})
+        } else {
+            return(
+                <p>Nothing to delete</p>
+             )
         }
     }
 
@@ -65,7 +82,7 @@ export default function GoalForm(props) {
             </form>
 
             <button className="button" onClick={saveGoalToGlobal}><Link to="/goals">Save</Link></button>
-
+            <button className="button" onClick={deletGoal}><Link to="/goals">Delete</Link></button>
         </div>
     );
 }
