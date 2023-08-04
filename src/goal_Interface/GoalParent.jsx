@@ -13,7 +13,6 @@ export default function GoalParent(props) {
         <div>
             {editMode ?  <GoalForm id={props.id} /> : <GoalDisplay id={props.id} />}
             <button onClick={toggleEditMode}>Edit Goal</button>
-            <button>Add amount</button> 
         </div>
     )
 }

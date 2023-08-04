@@ -62,6 +62,15 @@ const goalsReducer = (previousState, action) => {
             stateEditable.splice(indexToRemove, 1);
             return stateEditable;
         }
+
+        case 'addAmountToGoal': {
+            let indexToAdd = stateEditable.findIndex(globalSpecificGoal => {
+                return globalSpecificGoal.id === action.addAmount.id;
+            })
+            stateEditable[indexToAdd].initialAmount = action.addAmount.initialAmount;
+            return stateEditable;
+        }
+
         default: {
             return previousState;
         }
@@ -83,10 +92,11 @@ export default function GoalsProvider(props){
 
     const [persistentData, setPersistentData] = useLocalStorage('goals', initialGoalsData);
 
-    // useEffect(() => {
-    //     goalsDispatch({type:"setup", addData: persistentData});
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // },[]);
+    // ---> if we dont have data, runs twice making our data to appear twice. 
+    useEffect(() => {
+        goalsDispatch({type:"setup", addData: persistentData});
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
 
     useEffect(() => {
         console.log("Local Storage: " + persistentData);

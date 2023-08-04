@@ -27,6 +27,23 @@ export default function GoalDisplay(props) {
         }
     }
 
+    const [localInitialAmount, setLocalInitialAmount] = useState(0);
+
+    const addAmountToGoal = () => {
+        let targetGoal = { 
+            id: id,
+            initialAmount: localGoal.initialAmount += parseInt(localInitialAmount) //10
+        }
+
+        if(id) {
+            globalGoalsDispatch({type:"addAmountToGoal", addAmount: targetGoal})
+        } else {
+            return (
+                <p>Nothing to add</p>
+            )
+        }
+    }
+
     return(
         <div>
             <button onClick={deleteGoalFromGoals}>X</button>
@@ -35,6 +52,14 @@ export default function GoalDisplay(props) {
             <p>{localGoal.targetAmount}</p>
             <p>Amount: </p>
             <p>{localGoal.initialAmount}</p>
+            <form onSubmit={addAmountToGoal}>
+                <label>
+                    Amount:
+                    <input type="text" value={Number(localInitialAmount)} onChange={(event => setLocalInitialAmount(event.target.value))} />
+                </label>
+                <button type="submit">Add amount</button>
+            </form>
+            {/* <button onClick={addAmountToGoal}>Add Amount</button> */}
         </div>
     )
 }
