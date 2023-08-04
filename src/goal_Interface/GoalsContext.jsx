@@ -59,8 +59,8 @@ const goalsReducer = (previousState, action) => {
                 return globalSpecificGoal.id === action.deleteGoal.id;
             })
 
-            return stateEditable[indexToRemove] = action.deleteGoal
-            // return stateEditable.filter(user => user.id !== action.id)
+            stateEditable.splice(indexToRemove, 1);
+            return stateEditable;
         }
         default: {
             return previousState;
@@ -83,9 +83,10 @@ export default function GoalsProvider(props){
 
     const [persistentData, setPersistentData] = useLocalStorage('goals', initialGoalsData);
 
-    useEffect(() => {
-        goalsDispatch({type:"setup", addData: persistentData});
-    },[]);
+    // useEffect(() => {
+    //     goalsDispatch({type:"setup", addData: persistentData});
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // },[]);
 
     useEffect(() => {
         console.log("Local Storage: " + persistentData);
@@ -93,6 +94,7 @@ export default function GoalsProvider(props){
 
     useEffect(() => {
         setPersistentData(goalsData);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[goalsData]);
 
     return(
