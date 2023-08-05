@@ -1,8 +1,8 @@
-import ExpenseDisplay from "./ExpDisplay";
+// import ExpenseDisplay from "./ExpDisplay";
 import { useExpenseData } from "./ExpContext";
-import ExpenseForm from "./ExpForm";
+// import ExpenseForm from "./ExpForm";
 import ExpenseParent from "./ExpParent";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 
 export default function ExpensesPage(props){
@@ -22,7 +22,7 @@ export default function ExpensesPage(props){
                         </div>
                     );
                 })}
-            <button><NavLink to="/addExpense">Add expense</NavLink></button>
+            {/* <button><NavLink to="/addExpense">Add expense</NavLink></button> */}
             {/* <ExpenseForm /> */}
             <Navbar />
         </div>

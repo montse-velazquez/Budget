@@ -8,6 +8,7 @@ export default function ExpenseForm(props){
     const globalExpensesData = useExpenseData();
     const globalExpensesDispacth = useExpenseDispatch();
 
+    // const [localExpense, setLocalExpense] = useState({})
     const [localCategory, setLocalCategory] = useState("");
     const [localAmount, setLocalAmount] = useState("");
 
@@ -38,21 +39,14 @@ export default function ExpenseForm(props){
 
     return(
         <div>
-            <form>
-                <label>Category</label>
-                <select name="categories">
-                    <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}></option>
-                    <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Eating Out</option>
-                    <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Groceries</option>
-                    <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Entertainment</option>
-                    <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Subscription</option>
-                    <option value={localCategory} onChange={(event) => setLocalCategory(event.target.value)}>Other...</option>
-                </select>
-                {/* <input type="text" name="category" value={localCategory} onChange={(event) => setLocalCategory(event.target.value)} /> */}
-                <br />
-                <label>Amount</label>
-                <input type="text" name="amount" value={localAmount} onChange={(event) => setLocalAmount(event.target.value)} />
-            </form>
+            {/* //Add expenses individually instead of doing it by section  */}
+            {/* <form onSubmit={addAmountToExpense}>
+                <label>
+                    Amount:
+                    <input type="text" value={Number(localAmount)} onChange={(event => setLocalAmount(event.target.value))} />
+                </label>
+                <button type="submit">Add amount</button>
+            </form> */}
         <button><NavLink to="/expenses">Back</NavLink></button>
         <br />
         <button onClick={saveExpenseToGlobal} >Save</button>

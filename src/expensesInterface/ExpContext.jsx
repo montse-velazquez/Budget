@@ -2,15 +2,30 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { useLocalStorage } from "react-use";
 
 const initialExpensesData = [
-    {
-        id: 1,
-        category: "Groceries",
-        amount: 25
-    },
+    // {
+    //     id: 1,
+    //     category: "Groceries",
+    //     amount: 0
+    // },
     {
         id: 2,
         category: "Eating Out",
-        amount: 25
+        amount: 0
+    },
+    {
+        id: 3,
+        category: "Entertainment",
+        amount: 0
+    },
+    {
+        id: 4,
+        category: "Going Out",
+        amount: 0
+    },
+    {
+        id: 5,
+        category: "Other",
+        amount: 0
     }
 ]
 
@@ -46,6 +61,14 @@ const expenseReducer = (previousState, instruction) => {
             })
     
             stateEditable.splice(indexToRemove, 1);
+            return stateEditable;
+        }
+
+        case 'addAmountToExpense': {
+            let indexToAdd = stateEditable.findIndex(globalSpecificExpense => {
+                return globalSpecificExpense.id === instruction.addAmount.id;
+            })
+            stateEditable[indexToAdd].amount = instruction.addAmount.amount;
             return stateEditable;
         }
         
