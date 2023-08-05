@@ -39,6 +39,15 @@ const expenseReducer = (previousState, instruction) => {
 
             stateEditable[targetExpenseIndex] = instruction.updatedExpense;
             return stateEditable;
+
+        case 'deleteExpense' : {
+            let indexToRemove = stateEditable.findIndex(globalSpecificExpense => {
+                return globalSpecificExpense.id === instruction.deleteExpense.id;
+            })
+    
+            stateEditable.splice(indexToRemove, 1);
+            return stateEditable;
+        }
         
         default: 
             console.log("Invalid instruction, you tried: " + instruction.type);
@@ -66,6 +75,7 @@ export default function ExpenseProvider(props){
 
     useEffect(() => {
         expenseDispatch({type:"setup", addData:persistentData});
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -74,6 +84,7 @@ export default function ExpenseProvider(props){
 
     useEffect(() => {
         setPeristentData(expenseData);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[expenseData]);
 
     return(
