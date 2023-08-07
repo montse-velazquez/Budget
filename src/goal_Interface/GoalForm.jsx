@@ -67,7 +67,7 @@ export default function GoalForm(props) {
                     </div>
                 </form>
 
-                <button className="buttonSave" onClick={saveGoalToGlobal}><Link to="/goals">Save</Link></button>
+                <Link to="/goals"><button className="buttonSave" onClick={saveGoalToGlobal}>Save</button></Link>
             </div>
         </div>
     );

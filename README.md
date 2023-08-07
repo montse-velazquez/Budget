@@ -108,7 +108,9 @@ As it was for the front end, the front end was tested by the user stories that w
 | Insight | Expenses Tracker, The user wants to save money even if it's a small amount, The user is an international student, The user wants to keep track of his expenses |
 | Conclusion | "I was able to add different expenses inside of Budget Manager, it was nice to have default categories as i will just need to find the one that fits the most with my expense and add the amount, alll in a single page and with just a button"|
 
-
+![Step 1](./docs/pic6.png)
+![Step 2](./docs/pic7.png)
+![Step 3](./docs/pic8.png)
 
 | User Story 2 | Description |
 | ----------- | ----------- |
@@ -123,16 +125,20 @@ As it was for the front end, the front end was tested by the user stories that w
 | Insight | Users want to have a different savings account, If possible name them based on what they are for |
 | Conclusion | "Im able to create as many goals as i want! and i can name them as well, if i ever make any mistake i cna always edit them too, this is a really nice extra feature that i wasnt expecting at all"|
 
+![Step1](./docs/pic9.png)
+![Step2](./docs/pic10.png)
+
 | User Story 4 | Description |
 | ----------- | ----------- |
 | Quote | “I’m an user that is just getting into the habit of saving, so occasionally i overspend a bit of money and i tend to withdraw money from my savings and i want to keep like that till i get used to be on a budget”|
 | Insight | User wants to be able to withdraw money from his saving accounts, It is getting into the habit of being on a budget |
 | Conclusion | ==> The user is not able to withdram money at all this can be a disadvantge as they might loose track of how much money they really have, as second option thats the reason why is an edit goal, however a withdram button does not exist and can end up in misleading users about how works|
 
+![EditMode](./docs/pic11.png)
 
 
 **Overall**
 
-Users so far agree that the app is friendly and easy to use, it accomplish what they were asking for however it does not gives an extra to them, something that usually a new user is looking for making a decision about what kind of app they will like to use along their budgetting journey or if they will rather prefer to keep doing an spreedsheet. 
+Users so far agree that the app is friendly and easy to use, it accomplish what they were asking for however it does not gives an extra to them, something that usually a new user is looking for making a decision about what kind of app they will like to use along their budgetting journey or if they will rather keep doing an spreedsheet. 
 
 It can be said that the front end testing was fair, as it wasnt exceptional and it was tested by users with their past user stories, making it easier to detect our gaps of opportunities along this project as this is a project that i will keep working on it for a better user experience 
