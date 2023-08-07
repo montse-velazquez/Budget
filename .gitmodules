@@ -1,0 +1,3 @@
+[submodule "backEnd_budgetManager"]
+	path = backEnd_budgetManager
+	url = https://github.com/montse-velazquez/backEnd_budgetManager

@@ -10,6 +10,7 @@
 ---
 **Project**
 - [Trello](xxx)
+- [Presentation](https://youtu.be/eLI5HE8u3wQ)
 
 ### Purpose 
 The purpose of Budget Manager is to keep track of expenses and savings as the mainfunctions, since keeping track of those to thing will give us a better perspective of how our money is being moved. Adding other functions will enhance the user experience however is not really needed. 
