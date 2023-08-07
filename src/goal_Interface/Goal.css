@@ -1,6 +1,5 @@
 .title {
   font-weight: bolder;
-  margin: 1rem auto;
 }
 
 .newGoal {
@@ -79,7 +78,7 @@
 
 .addAmountButton {
   background-color: #fca311;
-  padding: 0rem 3rem 0 3rem;
+  padding: 0.5rem 3rem;
   border-radius: 5px;
 }
 

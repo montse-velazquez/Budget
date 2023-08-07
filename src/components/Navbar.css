@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px gray solid;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  font-weight: bolder;
+}
+.navbar :link {
+  text-decoration: none;
+}/*# sourceMappingURL=Navbar.css.map */
