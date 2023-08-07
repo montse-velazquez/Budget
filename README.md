@@ -89,10 +89,50 @@ Most of the design that change was with the intention that the app will be frien
 
 > Check original wireframes here =>  [BudgetManager](https://www.figma.com/file/9aP74PmjvV3k0VeWMFa3Uf/Budget-Manager?type=design&node-id=0%3A1&mode=design&t=oDbpl3CXBj381mnS-1)
 
-### Testing
+## Testing
 
 **Back End Testing**
 ![Back End Testing](./docs/pic1.png)
 
+Testing in all routes were doe bys Jest, errors, statusCodes and messages were tested along this files, inside of the we can find two suites, one for expenses and other for goals. 
+
+On each file, each route was tested differenlty as each route has different functions and requires different bodies, meaning that all kind of errors were tested aside of having a couple of try/catch functions inside of the code that will create to avoid any kind of error along the code. 
+
+**Front End Testing** 
+
+As it was for the front end, the front end was tested by the user stories that were created on Part A, not all user stories were completed as inside of them there were mentioned features that at the end of the project werent able to be developed 
+
+| User Story 1 | Description |
+| ----------- | ----------- |
+| Quote | “As an international student, I want to keep track of my expenses, so I can save a small amount at the end of every month and keep track of my expenses.”|
+| Insight | Expenses Tracker, The user wants to save money even if it's a small amount, The user is an international student, The user wants to keep track of his expenses |
+| Conclusion | "I was able to add different expenses inside of Budget Manager, it was nice to have default categories as i will just need to find the one that fits the most with my expense and add the amount, alll in a single page and with just a button"|
 
 
+
+| User Story 2 | Description |
+| ----------- | ----------- |
+| Quote | “Im a graduated student and I have been on a budget for the last year however it has been really boring to keep doing it from a spreadsheet on my laptop, I wish there was a dynamic and easy app for budgeting, so I will not be bother by using my laptop all the time”|
+| Insight | The user is a graduated student, User wants a dynamic and friendly budgeting app, Want to keep on a budget, He wants an app that can be managed from his phone and not only from his laptop |
+| Conclusion | "I loved how friendly the app is, and really easy to use not really fancy buttons and also really intuitive to use, the pallete of colours match and makesme feel motivated about it"|
+
+
+| User Story 3 | Description |
+| ----------- | ----------- |
+| Quote | “As a user of Budget Manager, I intend to have different saving goals as I have different purposes on each since I manage different expenses that need to be covered at the end of the month like rent, tuition, personal savings, etc”|
+| Insight | Users want to have a different savings account, If possible name them based on what they are for |
+| Conclusion | "Im able to create as many goals as i want! and i can name them as well, if i ever make any mistake i cna always edit them too, this is a really nice extra feature that i wasnt expecting at all"|
+
+| User Story 4 | Description |
+| ----------- | ----------- |
+| Quote | “I’m an user that is just getting into the habit of saving, so occasionally i overspend a bit of money and i tend to withdraw money from my savings and i want to keep like that till i get used to be on a budget”|
+| Insight | User wants to be able to withdraw money from his saving accounts, It is getting into the habit of being on a budget |
+| Conclusion | ==> The user is not able to withdram money at all this can be a disadvantge as they might loose track of how much money they really have, as second option thats the reason why is an edit goal, however a withdram button does not exist and can end up in misleading users about how works|
+
+
+
+**Overall**
+
+Users so far agree that the app is friendly and easy to use, it accomplish what they were asking for however it does not gives an extra to them, something that usually a new user is looking for making a decision about what kind of app they will like to use along their budgetting journey or if they will rather prefer to keep doing an spreedsheet. 
+
+It can be said that the front end testing was fair, as it wasnt exceptional and it was tested by users with their past user stories, making it easier to detect our gaps of opportunities along this project as this is a project that i will keep working on it for a better user experience 
