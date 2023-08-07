@@ -1,0 +1,73 @@
+// ===> CSS for ExpPage.jsx
+.expensesTitle {
+    font-weight: bolder;
+    background-color: #fca311;
+    padding: 0.5rem 0rem;
+}
+
+.text {
+    font-weight: bolder;
+    font-size: large;
+}
+
+@media all and (max-width: 500px) {
+    .text {
+        font-size: small;
+    }
+}
+// ===> CSS for ExpDisplay.jsx
+.container {
+    padding: 1rem;
+    margin: 1rem;
+    width: 35%;
+    border: 3px dotted orange;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px black solid;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.addAmount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2e394f;
+    color: white;
+    font-weight: 400;
+    border-radius: 1rem;
+}
+.labelExp {
+    padding-bottom: 1rem;
+    font-weight: 400;
+}
+
+.ExpInput {
+    border-radius: .5rem;
+    padding: 0 .5rem;
+}
+
+.ExpButton {
+    border-radius: .5rem;
+    padding: 0rem 3rem;
+    background-color: #fca311;
+}
+
+@media all and (max-width: 500px) {
+    .container{
+        background-color: white;
+        border: 2px dotted orange;
+    }
+
+    .addAmount{
+        font-size: smaller;
+    }
+}

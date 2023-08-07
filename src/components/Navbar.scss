@@ -10,4 +10,12 @@
     :link {text-decoration: none;}
     font-weight: bolder;
 }
+@media all and (max-width: 500px) {
+    .navbar {
+        flex-wrap: wrap;
+        width: fit-content;
+        gap: 1rem;
+        font-size: x-small;
+    }
+}
 

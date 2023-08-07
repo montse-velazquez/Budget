@@ -11,4 +11,14 @@
 }
 .navbar :link {
   text-decoration: none;
+}
+
+@media all and (max-width: 500px) {
+  .navbar {
+    flex-wrap: wrap;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 1rem;
+    font-size: x-small;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

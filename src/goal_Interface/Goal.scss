@@ -1,6 +1,6 @@
 .title {
     font-weight: bolder;
-    // margin: 1rem auto;
+    margin: 1rem auto;
 }
 // ===> CSS for GoalForm.jsx 
 .newGoal {
@@ -51,6 +51,12 @@
     border-radius: 15px;
     color: white;
     margin: 2rem;
+}
+
+@media all and (max-width: 500px) {
+    .perGoal {
+        margin: 1rem 2rem 0rem 2rem;
+    }
 }
 
 .goalTitle{
@@ -123,4 +129,12 @@ button {
     padding: .5rem 10rem;
     border-radius: .5rem;
     :link {text-decoration: none;}
+}
+
+@media all and (max-width: 500px) {
+    .addGoal {
+        padding: .5rem 5rem;
+        border: #14213d 2px dotted;
+        margin: 0rem;
+    }
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useExpenseData, useExpenseDispatch } from "./ExpContext";
+import './Expenses.scss'
 
 export default function ExpenseDisplay(props){
     const {id} = props;
@@ -14,18 +15,18 @@ export default function ExpenseDisplay(props){
         }));
     },[globalExpensesData, id])
 
-    const deleteExpenseFromExpenses = () => {
-        let targetExpense = {
-            id: id
-        }
-        if(id) {
-            globalExpensesDispatch({type:"deleteExpense", deleteExpense: targetExpense})
-        } else {
-            return (
-                <p>Nothing to delete</p>
-            )
-        }
-    }
+    // const deleteExpenseFromExpenses = () => {
+    //     let targetExpense = {
+    //         id: id
+    //     }
+    //     if(id) {
+    //         globalExpensesDispatch({type:"deleteExpense", deleteExpense: targetExpense})
+    //     } else {
+    //         return (
+    //             <p>Nothing to delete</p>
+    //         )
+    //     }
+    // }
 
     const [localAmount, setLocalAmount] = useState(0);
 
@@ -45,16 +46,19 @@ export default function ExpenseDisplay(props){
     }
 
     return(
-        <div>
-            <button onClick={deleteExpenseFromExpenses}>X</button>
-            <h4>{localExpense.category}</h4>
-            <p>{localExpense.amount}</p>
-            <form onSubmit={addAmountToExpense}>
-                <label>
+        <div className="container">
+            {/* <button className="xbutton" onClick={deleteExpenseFromExpenses}>X</button> */}
+            <div className="container2">
+            <h4 className="text">{localExpense.category}</h4>
+            <h4 className="text">${localExpense.amount}</h4>
+            </div>
+            <form className="addAmount" onSubmit={addAmountToExpense}>
+                <label className="labelExp">
                     Amount:
-                    <input type="text" value={Number(localAmount)} onChange={(event => setLocalAmount(event.target.value))} />
+                    <br />
+                    <input className="ExpInput"type="text" value={Number(localAmount)} onChange={(event => setLocalAmount(event.target.value))} />
                 </label>
-                <button type="submit">Add amount</button>
+                <button className="ExpButton" type="submit">Add amount</button>
             </form>
 
         </div>
