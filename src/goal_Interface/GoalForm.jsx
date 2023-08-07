@@ -62,27 +62,29 @@ export default function GoalForm(props) {
 
 
     return(
-        <div className="goalsContainer">
-            <h3 className="newGoal">Goal</h3>
-            <form>
-                <div className="item">
-                    <label>Name </label>
-                    <input type="text" name="title" value={localTitle} onChange={(event) => setLocalTitle(event.target.value)} />
-                </div>
+        <div className="containerGoal">
+            <div className="goalsContainer">
+                <h3 className="newGoal">Goal</h3>
+                <form>
+                    <div className="item">
+                        <label>Name </label>
+                        <input className="addAmountInput" type="text" name="title" value={localTitle} onChange={(event) => setLocalTitle(event.target.value)} />
+                    </div>
 
-                <div className="item">
-                <label>Target Amount</label>
-                <input type="text" name="targetAmount" value={localTargetAmount} onChange={(event) => setLocalTargetAmount(event.target.value)} />
-                </div>
+                    <div className="item">
+                    <label>Target Amount</label>
+                    <input className="addAmountInput" type="text" name="targetAmount" value={localTargetAmount} onChange={(event) => setLocalTargetAmount(event.target.value)} />
+                    </div>
 
-                <div className="item">
-                    <label>Initial Amount</label>
-                    <input type="text" name="initialAmount" value={localInitialAmount} onChange={(event) => setLocalInitialAmount(event.target.value)} />
-                </div>
-            </form>
+                    <div className="item">
+                        <label>Initial Amount</label>
+                        <input className="addAmountInput" type="text" name="initialAmount" value={localInitialAmount} onChange={(event) => setLocalInitialAmount(event.target.value)} />
+                    </div>
+                </form>
 
-            <button className="button" onClick={saveGoalToGlobal}><Link to="/goals">Save</Link></button>
-            {/* <button className="button" onClick={deleteGoal}><Link to="/goals">Delete</Link></button> */}
+                <button className="buttonSave" onClick={saveGoalToGlobal}><Link to="/goals">Save</Link></button>
+                {/* <button className="button" onClick={deleteGoal}><Link to="/goals">Delete</Link></button> */}
+            </div>
         </div>
     );
 }

@@ -4,6 +4,7 @@ import GoalParent from "./GoalParent";
 import { useGoalData } from "./GoalsContext";
 import { Navbar } from "../components/Navbar";
 import { Link } from "react-router-dom";
+import './Goal.scss';
 
 
 export default function GoalsPage(props){
@@ -11,11 +12,7 @@ export default function GoalsPage(props){
 
     return(
         <div>
-            <h1>Budget Manager</h1>
-
-            <h3>We have {globalGoalsData.length} notes in storage</h3>
-
-            <h3>Goals List:</h3>
+            <h1 className="title" >Budget Manager</h1>
             {globalGoalsData.map((goal) => {
                 return(
                     <div key={goal.id}>
@@ -25,7 +22,7 @@ export default function GoalsPage(props){
                 )
             })}
             <br />
-            <button><Link to="/addGoal">Add Goal</Link></button>
+            <button className="addGoal" ><Link to="/addGoal">Add Goal</Link></button>
             <Navbar />
             
         </div>

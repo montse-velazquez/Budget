@@ -2,11 +2,11 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { useLocalStorage } from "react-use";
 
 const initialExpensesData = [
-    // {
-    //     id: 1,
-    //     category: "Groceries",
-    //     amount: 0
-    // },
+    {
+        id: 1,
+        category: "Groceries",
+        amount: 0
+    },
     {
         id: 2,
         category: "Eating Out",

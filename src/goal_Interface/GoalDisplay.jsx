@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useGoalData, useGoalDispatch } from "./GoalsContext";
+import './Goal.scss';
 
 export default function GoalDisplay(props) {
     const {id} = props;
@@ -45,21 +46,27 @@ export default function GoalDisplay(props) {
     }
 
     return(
-        <div>
-            <button onClick={deleteGoalFromGoals}>X</button>
-            <h4>{localGoal.title}</h4>
-            <p>Target Amount: </p>
-            <p>{localGoal.targetAmount}</p>
-            <p>Amount: </p>
-            <p>{localGoal.initialAmount}</p>
-            <form onSubmit={addAmountToGoal}>
-                <label>
-                    Amount:
-                    <input type="text" value={Number(localInitialAmount)} onChange={(event => setLocalInitialAmount(event.target.value))} />
-                </label>
-                <button type="submit">Add amount</button>
-            </form>
-            {/* <button onClick={addAmountToGoal}>Add Amount</button> */}
+        <div className="containerGoal">
+            <div className="perGoal">
+                <button onClick={deleteGoalFromGoals}>X</button>
+                <h4 className="goalTitle">{localGoal.title}</h4>
+                <div className="circle2">
+                    <div className="circle">
+                        <p className="goalAmount">Goal: </p>
+                        <p className="goalAmount">${localGoal.targetAmount} / ${localGoal.initialAmount}</p>
+                    </div>
+                </div>
+                <form onSubmit={addAmountToGoal}>
+                    <label className="addAmount">
+                        Amount:
+                        <br />
+                        <input className="addAmountInput" type="text" value={Number(localInitialAmount)} onChange={(event => setLocalInitialAmount(event.target.value))} />
+                    </label>
+                    <br />
+                    <button className="addAmountButton" type="submit">Add amount</button>
+                </form>
+                {/* <button onClick={addAmountToGoal}>Add Amount</button> */}
+            </div>
         </div>
     )
 }
