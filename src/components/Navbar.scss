@@ -1,3 +1,4 @@
+// Style for the nav bar that will be located at the bottom of every page
 .navbar {
     display: flex;
     justify-content: center;
@@ -9,6 +10,8 @@
     :link {text-decoration: none;}
     font-weight: bolder;
 }
+
+// Change of style in case when the screen size is smaller in this case is for a phone 
 @media all and (max-width: 500px) {
     .navbar {
         flex-wrap: wrap;
