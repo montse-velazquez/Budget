@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  border: 1px gray solid;
+  border: 1px gray dotted;
   width: -moz-fit-content;
   width: fit-content;
   margin: 1rem auto;
