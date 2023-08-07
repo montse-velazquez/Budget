@@ -5,11 +5,12 @@ import { useExpenseData } from "./ExpContext";
 import { Navbar } from "../components/Navbar";
 import './Expenses.scss'
 
-// This Expenses Page is going to render the main route, wehre we are goin to be able to see all expenses and amount
+// This Expenses Page is going to render the main route, wehre we are going to be able to see all expenses and amount
 export default function ExpensesPage(props){
     const globalExpensesData = useExpenseData();
 
 
+    // It will be rendered
     return(
         <div>
             <h1 className="expensesTitle">Expenses</h1>
